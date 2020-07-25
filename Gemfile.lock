@@ -63,6 +63,7 @@ GEM
     autoprefixer-rails (9.8.5)
       execjs
     backport (1.1.2)
+    bcrypt (3.1.13)
     benchmark (0.1.0)
     bindex (0.8.1)
     bootsnap (1.4.5)
@@ -105,7 +106,7 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
-    i18n (1.8.4)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     jbuilder (2.9.1)
@@ -286,6 +287,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (= 3.1.13)
   bootsnap (= 1.4.5)
   bootstrap-sass (= 3.4.1)
   byebug (= 11.0.1)
