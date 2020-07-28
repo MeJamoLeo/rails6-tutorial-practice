@@ -10,8 +10,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      #log_in users_path(@user)  エラー出たお
+      # これはメソッドである
+      log_in(@user)
       flash[:success] = "Welcome to the sample app"
-      redirect_to @user
+      redirect_to user_url(@user)
+      # redirect_to("/users/#{@user.id}")
+      # redirect_to @user
     else
       render 'new'
     end
