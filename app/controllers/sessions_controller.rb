@@ -16,7 +16,8 @@ class SessionsController < ApplicationController
       # 同じ意味で1行にしてるやつ
       # params[:session][:remember_me] == '1' ? remember(user) : forget(user)
 
-      redirect_to user_url(user)
+
+      redirect_back_or(user) # ここよくわかんない
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
