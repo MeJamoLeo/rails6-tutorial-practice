@@ -1,0 +1,17 @@
+<!--cssにidを割り振っている-->
+<li id="micropost-<%= micropost.id %>">
+    <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+    <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+    <span class="content">
+        <%= micropost.content %>
+        <%# マイクロポストの画像表示を追加する(resize済み) %>
+        <%= image_tag micropost.display_image if micropost.image.attached? %>
+    </span>
+    <span class="timestamp">
+        <!--「3分前に投稿」みたいなやつを記述する -->
+        Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+        <% if current_user?(micropost.user) %>
+        <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+        <% end %>
+    </span>
+</li>
